@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "74153f35-025f-4c7b-8bfc-c09d4a4a403f",
+		"name": "HAB - Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get user by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/users/1",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/users/?page=1&pagesize=3&tab=voters",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "3"
+						},
+						{
+							"key": "sort",
+							"value": "DESC",
+							"disabled": true
+						},
+						{
+							"key": "order",
+							"value": "added_at",
+							"disabled": true
+						},
+						{
+							"key": "inname",
+							"value": "Jua",
+							"disabled": true
+						},
+						{
+							"key": "fromdate",
+							"value": "1609619677",
+							"disabled": true
+						},
+						{
+							"key": "filter",
+							"value": "week",
+							"disabled": true
+						},
+						{
+							"key": "tab",
+							"value": "voters"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "displayName",
+							"value": "Juan ignacio",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "xusema@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/users/register",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"users",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Email",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "xusema@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/users/login",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEsInVzZXJUeXBlIjoiYWRtaW5pc3RyYXRvciIsImlhdCI6MTYxMDU3ODU4MSwiZXhwIjoxNjEzMTcwNTgxfQ.Q2eqsyRIip6CUNUVa8GP3OzjcgybJ3y3JjqN5a7m1cs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/users/remove/2",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"users",
+						"remove",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjEsInVzZXJUeXBlIjoiYWRtaW5pc3RyYXRvciIsImlhdCI6MTYxMDgxNzgzNiwiZXhwIjoxNjEzNDA5ODM2fQ.W_PDDHsMA6K3bqtMjPFKY960V5wfpIXZggHSE1w3e0g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "display_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "avatar_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "location",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bio",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "surname1",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "surname2",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "website",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "twitter",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "github",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "gitlab",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/users/edit/1",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"users",
+						"edit",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

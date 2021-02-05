@@ -1,0 +1,913 @@
+{
+	"info": {
+		"_postman_id": "b3b48a13-228d-414b-b397-c107f01fa83a",
+		"name": "HAB - CodeSOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "New Answer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "questionID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "'test content answer'",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/questions/ask",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"questions",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHome",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/?pagesize=10",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "tab",
+									"value": "active",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "hot",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "week",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "month",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestionByID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/questions/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"questions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateAnswer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{ADMIN}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "contentID",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/questions/1/validateAnswer",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"questions",
+								"1",
+								"validateAnswer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUnanswered",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/unanswered",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"unanswered"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pagesize",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "newest",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "votes",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "noAnswers",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/questions?page=1&pagesize=10",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"questions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "10"
+								},
+								{
+									"key": "tab",
+									"value": "newest",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "active",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "unanswered",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "votes",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "noAnswers",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "noAcceptedAnswers",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "noAnswers, noAcceptedAnswers",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "added_at",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "votes",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "modified_at",
+									"disabled": true
+								},
+								{
+									"key": "language",
+									"value": "javascript",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Question",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "'test123'",
+									"type": "text"
+								},
+								{
+									"key": "languageID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "'test content'",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/questions/ask",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"questions",
+								"ask"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get user by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/?page=1&pagesize=15",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "pagesize",
+									"value": "15"
+								},
+								{
+									"key": "order",
+									"value": "added_at",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "reputation",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "votes",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "DESC",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "ASC",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "week",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "month",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "quarter",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "year",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "all",
+									"disabled": true
+								},
+								{
+									"key": "fromdate",
+									"value": "1609619677",
+									"disabled": true
+								},
+								{
+									"key": "inname",
+									"value": "Jua",
+									"disabled": true
+								},
+								{
+									"key": "tab",
+									"value": "voters",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/remove/2",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"remove",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "displayName",
+									"value": "Juan ignacio",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "xusema@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/register",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@codesos.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/login",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/logout",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "display_name",
+									"value": "Paquito",
+									"type": "text"
+								},
+								{
+									"key": "avatar_url",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "bio",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "surname1",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "surname2",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "website",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "twitter",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "github",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "gitlab",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/edit/1",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle user suspension",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{ADMIN}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/suspension/3",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"suspension",
+								"3"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Promote user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{ADMIN}}"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{USER}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/promote/3",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"promote",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Demote user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{ADMIN}}"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{USER}}",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{HOST}}:{{PORT}}/users/demote/3",
+							"host": [
+								"{{HOST}}"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"users",
+								"demote",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Languages",
+			"item": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

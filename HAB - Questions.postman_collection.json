@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "b3b48a13-228d-414b-b397-c107f01fa83a",
+		"name": "HAB - Questions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getQuestions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/questions?page=1&pagesize=10",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"questions"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pagesize",
+							"value": "10"
+						},
+						{
+							"key": "tab",
+							"value": "newest",
+							"disabled": true
+						},
+						{
+							"key": "tab",
+							"value": "active",
+							"disabled": true
+						},
+						{
+							"key": "tab",
+							"value": "unanswered",
+							"disabled": true
+						},
+						{
+							"key": "tab",
+							"value": "votes",
+							"disabled": true
+						},
+						{
+							"key": "filter",
+							"value": "noAnswers",
+							"disabled": true
+						},
+						{
+							"key": "filter",
+							"value": "noAcceptedAnswers",
+							"disabled": true
+						},
+						{
+							"key": "filter",
+							"value": "noAnswers, noAcceptedAnswers",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "added_at",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "votes",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "modified_at",
+							"disabled": true
+						},
+						{
+							"key": "language",
+							"value": "javascript",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "'test123'",
+							"type": "text"
+						},
+						{
+							"key": "languageID",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "'test content'",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}:{{PORT}}/questions/ask",
+					"host": [
+						"{{HOST}}"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"questions",
+						"ask"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
